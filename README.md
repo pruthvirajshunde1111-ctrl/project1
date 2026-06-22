@@ -126,7 +126,7 @@ stateDiagram-v2
 
 ```mermaid
 flowchart LR
-    subgraph Per-Step["Per-Step Span Data"]
+    subgraph PerStep["Per-Step Span Data"]
         S1[Step Name] --> S2[Input/Output]
         S2 --> S3[Confidence 0-1]
         S3 --> S4[Token Count]
@@ -140,21 +140,19 @@ flowchart LR
         T3 --> T4[Final Score]
         T4 --> T5[Status]
         T5 --> T6[Diagnosis]
-        T6 --> T7[Spans[]]
+        T6 --> T7["Spans[]"]
     end
 
     subgraph Storage["Storage Backend"]
         DB[(SQLite Index)] --> J[(JSON Files)]
     end
 
-    Per-Step --> Trace
+    PerStep --> Trace
     Trace --> Storage
-    
+
     style S1 fill:#1A1F3D,stroke:#6366F1
     style T1 fill:#1A1F3D,stroke:#6366F1
     style DB fill:#131839,stroke:#F59E0B
-```
-
 ---
 
 ## 🏷️ Failure Taxonomy
