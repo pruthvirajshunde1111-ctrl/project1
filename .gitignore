@@ -1,0 +1,36 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+*.pyc
+
+# Node / Frontend
+node_modules/
+ui/frontend/node_modules/
+ui/frontend/dist/
+
+# Data (generated traces, eval cases, databases)
+data/traces/
+data/eval/
+data/__pycache__/
+*.db
+batch_results.json
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
