@@ -140,7 +140,7 @@ flowchart LR
         T3 --> T4[Final Score]
         T4 --> T5[Status]
         T5 --> T6[Diagnosis]
-        T6 --> T7["Spans Array"]
+        T6 --> T7[Spans Array]
     end
 
     subgraph Storage["Storage Backend"]
@@ -155,11 +155,9 @@ flowchart LR
     style DB fill:#131839,stroke:#F59E0B
 ```
 
----
-
 ## 🏷️ Failure Taxonomy
 
-Every flagged failure is classified into one of six categories:
+Every flagged failure is classified into one of six categories.
 
 ```mermaid
 mindmap
