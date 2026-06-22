@@ -122,7 +122,7 @@ stateDiagram-v2
     note right of Completed : Score calculated<br/>from all spans
 ```
 
-### Data Flow
+## Data Flow
 
 ```mermaid
 flowchart LR
@@ -140,7 +140,7 @@ flowchart LR
         T3 --> T4[Final Score]
         T4 --> T5[Status]
         T5 --> T6[Diagnosis]
-        T6 --> T7["Spans[]"]
+        T6 --> T7["Spans Array"]
     end
 
     subgraph Storage["Storage Backend"]
@@ -153,6 +153,8 @@ flowchart LR
     style S1 fill:#1A1F3D,stroke:#6366F1
     style T1 fill:#1A1F3D,stroke:#6366F1
     style DB fill:#131839,stroke:#F59E0B
+```
+
 ---
 
 ## 🏷️ Failure Taxonomy
@@ -163,32 +165,29 @@ Every flagged failure is classified into one of six categories:
 mindmap
   root((Failure Taxonomy))
     Extraction Hallucination
-      :LLM extracts entities not present
-      in source document:
-      Severity: High
+      LLM extracts entities not present in source document
+      Severity High
+
     Misclassification
-      :Document classified into
-      wrong type:
-      Severity: High
+      Document classified into wrong type
+      Severity High
+
     Propagation Error
-      :Previous step output
-      misinterpreted:
-      Severity: Medium
+      Previous step output misinterpreted
+      Severity Medium
+
     Prompt Failure
-      :LLM ignores or partially
-      follows instructions:
-      Severity: Medium
+      LLM ignores or partially follows instructions
+      Severity Medium
+
     Context Loss
-      :Important information dropped
-      between steps:
-      Severity: High
+      Important information dropped between steps
+      Severity High
+
     Unknown
-      :Cannot auto-categorize:
-      Severity: Low
+      Cannot auto-categorize
+      Severity Low
 ```
-
----
-
 ## 🛠️ Tech Stack
 
 | Layer | Technology | Purpose |
